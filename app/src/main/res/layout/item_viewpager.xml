@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:background="@color/colorPrimary">
+        <TextView
+            android:id="@+id/item_viewpager_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="卫宫切嗣"
+            android:textSize="24sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/item_viewpager_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="卫宫切嗣，日本轻小说《Fate/Zero》及其衍生作品中的主要角色。 [1]  第四次圣杯战争中Saber的Master（御主），卫宫士郎的养父，被称为“魔术师杀手”的男人。虽然是希望世界和平的梦想家，但实践时却是冷酷无情的现实主义者。有着极为沉痛的过去和悲伤的回忆。"
+            android:textSize="20sp"
+            android:layout_margin="30dp"/>
+
+    </LinearLayout>
+</LinearLayout>
