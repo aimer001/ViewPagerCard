@@ -3,9 +3,12 @@ package com.aimer.viewpager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 
 import com.aimer.viewpager.adapter.ViewPagerCardAdapter;
 import com.aimer.viewpager.bean.InfoBean;
+import com.aimer.viewpager.view.AnimActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,5 +48,25 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager.setOffscreenPageLimit(6);
 
+        mAdapter.setOnShowItemClickListener(new ViewPagerCardAdapter.OnViewPagerItemClickListener() {
+            @Override
+            public void onViewPagerItemClick(int position) {
+                switch (position){
+                    case 0:
+                        AnimActivity.openAnimActivity(MainActivity.this);
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
+            }
+        });
+
     }
+
 }

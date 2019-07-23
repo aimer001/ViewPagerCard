@@ -17,6 +17,7 @@ public class ViewPagerCardAdapter extends PagerAdapter {
 
     private List<InfoBean> mList;
     private Context mContext;
+    private OnViewPagerItemClickListener onViewPagerItemClickListener;
 
     public ViewPagerCardAdapter(List<InfoBean> mList, Context mContext) {
         this.mList = mList;
@@ -34,7 +35,7 @@ public class ViewPagerCardAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         View view = LayoutInflater.from(mContext)
                 .inflate(R.layout.item_viewpager, container, false);
         container.addView(view);
@@ -42,11 +43,26 @@ public class ViewPagerCardAdapter extends PagerAdapter {
         TextView info = view.findViewById(R.id.item_viewpager_desc);
         name.setText(mList.get(position).getName());
         info.setText(mList.get(position).getInfo());
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onViewPagerItemClickListener.onViewPagerItemClick(position);
+            }
+        });
         return view;
     }
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         container.removeView((View) object);
+    }
+
+    public interface OnViewPagerItemClickListener{
+        void onViewPagerItemClick(int position);
+    }
+
+    public void setOnShowItemClickListener(OnViewPagerItemClickListener onViewPagerItemClickListener) {
+        this.onViewPagerItemClickListener = onViewPagerItemClickListener;
+
     }
 }
